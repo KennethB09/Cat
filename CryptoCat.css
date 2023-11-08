@@ -18,7 +18,7 @@
 
 html {
     background-color: var(--main-color-one);
-    background-image: url('/blob-scatter-haikei.svg');
+    background-image: url('images\icons\blob-scatter-haikei.svg');
     background-size: 100%;
     background-repeat: no-repeat;
 }
