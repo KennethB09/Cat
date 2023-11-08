@@ -6,7 +6,6 @@
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: sans-serif;
 }
 
 :root {
@@ -17,7 +16,7 @@
     --main-color-bg: rgb(51, 51, 51);
 
     --main-fontFamily: 'Titillium Web', sans-serif;
-    --main-header-fontSize: clamp(15px, 5vw, 2rem);
+    --main-header-fontSize: clamp(20px, 5vw, 2rem);
     --main-para-fontSize: clamp(11px, 1vw, 2rem);
 }
 
@@ -137,7 +136,8 @@ nav {
 
 .hero-head {
     color: azure;
-    font-size: min(7vw, max(4rem));
+    line-height: clamp(40px, 5vw, 5rem);
+    font-size: clamp(40px, 5vw, 5rem);
 }
 
 .hero-para {
@@ -227,8 +227,7 @@ nav {
 
     color: azure;
     font-weight: 700;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: var(--main-header-fontSize);
+    font-size: clamp(20px, 7vw, 3.5rem);
     text-align: center;
 
     padding: 2rem 0;
@@ -238,7 +237,7 @@ nav {
     background-color: var(--main-color-two);
     border-radius: 10px 10px 0 0;
     padding: 1em 0;
-    font-size: min(4vw, max(1.5rem));
+    font-size: var(--main-header-fontSize);
 }
 
 .service-icon-description-container {
@@ -250,7 +249,7 @@ nav {
 .service-description {
     padding: 0 1em 1em 1em;
     font-size: var(--main-para-fontSize);
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .service-icon {
@@ -454,7 +453,8 @@ footer {
 
 .footer-social-h {
     text-align: center;
-    font-size: min(3vw ,max(2.5rem));
+    font-weight: 400;
+    font-size: var(--main-header-fontSize);
     color: azure;
 }
 
@@ -686,13 +686,17 @@ footer {
 
 @media (max-width: 425px) {
 
+    .walk-earn-text-container {
+        padding-left: 0;
+    }
+
     .hero-login-btn {
         margin-top: 10vh;
     }
 
     .service-section {
         grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
         grid-template-areas:
         'head-s'
         'icon1'
@@ -702,8 +706,8 @@ footer {
     }
 
     .service-head {
-        font-size: 6vw;
         padding: 2rem 0;
+        height: max-content;
     }
 
     .card {
@@ -733,7 +737,6 @@ footer {
         color: var(--main-color-two);
         background-color: transparent;
         border-radius: 10px 10px 0 0;
-        font-size: 4vw;
     }
     
     .service-description {
@@ -743,5 +746,13 @@ footer {
 
     .card::-webkit-scrollbar {
         display: none;
+    }
+
+    .footer-social-icon {
+        width: 40vw;
+    }
+
+    .footer-app-icon {
+        width: 60vw;
     }
 }
