@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -13,7 +15,10 @@
     --main-color-three: #fff;
     --main-color-hover: #38d16f;
     --main-color-bg: rgb(51, 51, 51);
-    --main-header-font: clamp(1rem, 1vw, 2rem);
+
+    --main-fontFamily: 'Titillium Web', sans-serif;
+    --main-header-fontSize: clamp(15px, 5vw, 2rem);
+    --main-para-fontSize: clamp(11px, 1vw, 2rem);
 }
 
 html {
@@ -26,6 +31,7 @@ html::-webkit-scrollbar {
 
 body {
     display: grid;
+    font-family: 'Titillium Web', sans-serif;;
 }
 
 /* nav section */
@@ -220,8 +226,9 @@ nav {
     grid-area: head-s;
 
     color: azure;
-    font-weight: 800;
-    font-size: min(5vw, max(3rem));
+    font-weight: 700;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: var(--main-header-fontSize);
     text-align: center;
 
     padding: 2rem 0;
@@ -242,7 +249,7 @@ nav {
 
 .service-description {
     padding: 0 1em 1em 1em;
-    font-size: min(2vw, max(.8rem));
+    font-size: var(--main-para-fontSize);
     font-weight: 500;
 }
 
@@ -327,7 +334,7 @@ nav {
 
 .cloud-para {
     color: var(--main-color-three);
-    font-size: min(2vw ,max(1rem));
+    font-size: var(--main-para-fontSize);
 }
 
 /* offer 2 */
@@ -372,7 +379,7 @@ nav {
 
 .walk-earn-para {
     color: var(--main-color-three);
-    font-size: min(2vw ,max(1rem));
+    font-size: var(--main-para-fontSize);
 }
 
 /* offer 3 */
@@ -414,7 +421,7 @@ nav {
 
 .trade-para {
     color: var(--main-color-three);
-    font-size: min(2vw ,max(1rem));
+    font-size: var(--main-para-fontSize);
 }
 
 /* footer */
@@ -730,7 +737,6 @@ footer {
     }
     
     .service-description {
-        font-size: 2vw;
         font-weight: 500;
         padding-left: 0;
     }
