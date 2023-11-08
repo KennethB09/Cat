@@ -8,10 +8,11 @@ navToggle.addEventListener('click', () => {
     if (visibility === "false") {
         nav.setAttribute('data-visible', true);
         navToggle.setAttribute('aria-expanded', true);
-        navIcon.src = '/icons8-x.svg';
+        navIcon.src = './images/icons/icons8-x.svg';
+
     } else if (visibility === "true") {
         nav.setAttribute('data-visible', false);
         navToggle.setAttribute('aria-expanded', false);
-        navIcon.src = '/icons8-hamburger-menu.svg';
+        navIcon.src = './images/icons/icons8-hamburger-menu.svg';
     }
 });
