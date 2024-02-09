@@ -51,6 +51,11 @@ nav {
     padding-right: 5vw;
 }
 
+.nav-btn-container {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
     float: left;
     display: flex;
