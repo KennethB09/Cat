@@ -470,7 +470,8 @@ footer {
     }
 
     .hero-head {
-        font-size: 13vw;
+        font-size: 15vw;
+        line-height: 3.5rem;
     }
 
     .hero-para {
@@ -478,10 +479,11 @@ footer {
     }
 
     .hero-login-btn {
-        font-size: .7rem;
+        font-size: 1rem;
     }
+
     .hero-signin-btn {
-        font-size: .7rem;
+        font-size: 1rem;
     }
 
 }
@@ -560,7 +562,7 @@ footer {
         margin-top: 0;
         font-size: min(3.5vw, max(2em));
 
-        inset: 0 0 0 50%;
+        inset: 0 0 0 30%;
         flex-direction: column;
         position: fixed;
         padding: min(30vh, 10rem) 1rem;
@@ -598,10 +600,10 @@ footer {
 
     .mobile-nav-btn {
         display: block;
-        font-size: min(2.5vw, max(2em));
+        font-size: min(5vw, max(2rem));
         font-weight: 600;
         text-transform: uppercase;
-        padding: 8px;
+        padding: .8rem;
         border-radius: 5px;
         border: 1px solid var(--main-color-three);
 
@@ -617,13 +619,13 @@ footer {
     
     .item {
         background-color: #333;
-
         padding: 1rem 0 1rem 10px;
         border-bottom: 1px solid var(--main-color-three);
     }
 
      .item > a {
         background-color: #333;
+        font-size: 1.3rem;
     }
 
     .item-a:hover {
@@ -634,7 +636,8 @@ footer {
 
     .navigation-btn-desktop {
         margin-left: 0;
-        font-size: min(2.5vw, max(2em));
+        padding: .8rem;
+        font-size: min(5vw, max(2em));
         color: var(--main-color-three);
         border: 1px solid var(--main-color-three);
     }
