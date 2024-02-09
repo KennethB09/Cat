@@ -16,12 +16,14 @@
     --main-color-bg: rgb(51, 51, 51);
 
     --main-fontFamily: 'Titillium Web', sans-serif;
-    --main-header-fontSize: clamp(20px, 5vw, 2rem);
-    --main-para-fontSize: clamp(11px, 1vw, 2rem);
+    --main-title-fontSize: clamp(20px, 5vw, 2rem);
+    --main-header-fontSize: clamp(16px, 2.3vw, 2rem);
+    --main-para-fontSize: clamp(10px, 1vw, 2rem);
 }
 
 html {
     background-color: var(--main-color-one);
+    scroll-behavior: smooth;
 }
 
 html::-webkit-scrollbar {
@@ -37,7 +39,7 @@ body {
 
 header {
     text-transform: uppercase;
-    height: 10rem;
+    height: 5rem;
 }
 
 nav {
@@ -86,11 +88,11 @@ nav {
 .navigation-btn-desktop {
     font-weight: 600;
     text-transform: uppercase;
-    padding: 10px;
+    padding: 8px;
     margin-left: 3em;
     border-radius: 5px;
     border: 2px solid var(--main-color-two);
-    font-size: clamp(15px, 1vw, 2rem);
+    font-size: clamp(13px, 1vw, 2rem);
 
     background-color: transparent;
     color: var(--main-color-two);
@@ -108,7 +110,7 @@ nav {
 
 /* main section */
 
-.main-container {
+main {
     display: grid;
     grid-template-areas:
     'hero hero'
@@ -127,11 +129,14 @@ nav {
     grid-template-areas: 
     'intro graphic';
 
-    height: 100vh;
+    height: 80vh;
 }
 
 .hero-section-intro-container {
     grid-area: intro;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-head {
@@ -150,23 +155,25 @@ nav {
     color: var(--main-color-two);
 }
 
-.hero-login-btn {
-    margin-top: 2rem;
-    margin-right: 1rem;
+.hero-section--btn-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-btn {
     padding: 10px;
-    
-
-    background-color: var(--main-color-three);
-    color: var(--main-color-one);
-
     border-radius: 5px;
     border: 1px solid azure;
-
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: clamp(13px, 1vw, 2rem);
     font-weight: 800;
-
     transition: .3s ease-in-out;
+}
+
+.hero-login-btn {
+    background-color: var(--main-color-three);
+    color: var(--main-color-one);
 }
 
 .hero-login-btn:hover {
@@ -177,19 +184,8 @@ nav {
 }
 
 .hero-signin-btn {
-    margin-top: 2rem;
-    padding: 10px;
-
     background-color: transparent;
     color: var(--main-color-three);
-    
-    border-radius: 5px;
-    border: 1px solid azure;
-
-    text-transform: uppercase;
-    font-size: 1rem;
-    font-weight: 800;
-    transition: .3s ease-in-out;
 }
 
 .hero-signin-btn:hover {
@@ -201,6 +197,8 @@ nav {
 
 .hero-graphic-container {
     grid-area: graphic;
+    display: flex;
+    align-items: center;
     justify-self: flex-end;
 }
 
@@ -214,6 +212,7 @@ nav {
 .service-section {
     display: grid;
     grid-area: service;
+    margin: 5rem 0;
 
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
@@ -227,23 +226,17 @@ nav {
 
     color: azure;
     font-weight: 700;
-    font-size: clamp(20px, 7vw, 3.5rem);
+    font-size: var(--main-title-fontSize);
     text-align: center;
 
     padding: 2rem 0;
 }
 
-.service-icon-head {
-    background-color: var(--main-color-two);
-    border-radius: 10px 10px 0 0;
-    padding: 1em 0;
-    font-size: var(--main-header-fontSize);
-}
+/* SERVICE CARD */
 
-.service-icon-description-container {
-    border-radius: 10px;
-    background-color: var(--main-color-two);
-    min-height: 100%;
+.service-icon-head {
+    font-size: var(--main-header-fontSize);
+    color: var(--main-color-two);
 }
 
 .service-description {
@@ -253,15 +246,14 @@ nav {
 }
 
 .service-icon {
-    padding: 2rem 0;
+    margin-bottom: 1rem;
+    width: 3rem;
 }
 
-.service-icon1, .service-icon2, .service-icon3, .service-icon4 {
-    border: 1px solid azure;
+.card {
+    border-radius: 10px;
     color: azure;
 
-    border-radius: 10px;
-    background-color: var(--main-color-bg);
     font-size: 1.5rem;
     font-weight: 800;
     text-align: center;
@@ -293,7 +285,20 @@ nav {
     margin: 2rem 0;
 }
 
+.offer-head {
+    font-size: var(--main-title-fontSize);
+    color: var(--main-color-two);
+    padding-bottom: .3em;
+    text-transform: uppercase;
+}
+
+.offer-png {
+    width: min(20vw, max(20rem));
+    aspect-ratio: 1;
+}
+
 /* offer 1 */
+
 
 .offer-section-cloudmining-container {
     display: grid;
@@ -320,15 +325,6 @@ nav {
 
 .cloud-mining-png {
     grid-area: png;
-    width: min(40vw, max(20rem));
-    aspect-ratio: 1;
-}
-
-.cloud-head {
-    color: var(--main-color-two);
-    padding-bottom: .3em;
-    font-size: min(6vw, max(3rem));
-    text-transform: uppercase;
 }
 
 .cloud-para {
@@ -364,16 +360,6 @@ nav {
 
 .walk-earn-png {
     grid-area: png2;
-    width: min(40vw, max(20rem));
-    aspect-ratio: 1;
-}
-
-.walk-earn-head {
-    padding-bottom: .3em;
-    text-transform: uppercase;
-    color: var(--main-color-two);
-
-    font-size: min(6vw, max(3rem));
 }
 
 .walk-earn-para {
@@ -406,16 +392,6 @@ nav {
 
 .trade-png {
     grid-area: png3;
-    width: min(40vw, max(20rem));
-    aspect-ratio: 1;
-}
-
-.trade-head {
-    padding-bottom: .3em;
-    text-transform: uppercase;
-    color: var(--main-color-two);
-
-    font-size:  min(6vw, max(3rem));
 }
 
 .trade-para {
@@ -429,7 +405,7 @@ footer {
     display: grid;
     grid-template-areas: 'logo contact app';
     grid-template-columns: repeat(3, 1fr);
-    height: 50vh;
+    height: 30vh;
     border-radius: 20px 20px 0 0;
     width: 100%;
 
@@ -460,7 +436,7 @@ footer {
 
 .footer-social-icon {
     padding-top: 1rem;
-    width: min(20vw, max(20rem));
+    width: min(13vw, max(20rem));
     
 }
 
@@ -470,7 +446,7 @@ footer {
 }
 
 .footer-app-icon {
-    width: min(30vw, max(30rem));
+    width: min(20vw, max(30rem));
 }
 
 @media (max-width: 425px) {
@@ -608,20 +584,20 @@ footer {
         width: 2rem;
     }
 
-    .a-btn-mobile {
+    .nav-btn-container {
         display: flex;
-        justify-content:center;
-        margin-top: 2.5rem;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1rem;
     }
 
     .mobile-nav-btn {
         display: block;
-
-        font-size: min(3.5vw, max(2em));
+        font-size: min(2.5vw, max(2em));
         font-weight: 600;
         text-transform: uppercase;
 
-        padding: 10px;
+        padding: 8px;
         border-radius: 5px;
         border: 1px solid var(--main-color-three);
 
@@ -653,9 +629,8 @@ footer {
     }
 
     .navigation-btn-desktop {
-        margin-top: 2.5rem;
-        margin-left: 10px;
-        font-size: min(3.5vw, max(2em));
+        margin-left: 0;
+        font-size: min(2.5vw, max(2em));
         color: var(--main-color-three);
         border: 1px solid var(--main-color-three);
     }
@@ -668,7 +643,6 @@ footer {
     .item-btn-li, .item-btn-li-a {
         background-color: #333;
         width: fit-content;
-        float: left;
     }
 
 }
@@ -688,10 +662,6 @@ footer {
 
     .walk-earn-text-container {
         padding-left: 0;
-    }
-
-    .hero-login-btn {
-        margin-top: 10vh;
     }
 
     .service-section {
