@@ -601,7 +601,6 @@ footer {
         font-size: min(2.5vw, max(2em));
         font-weight: 600;
         text-transform: uppercase;
-
         padding: 8px;
         border-radius: 5px;
         border: 1px solid var(--main-color-three);
